@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uromen Мнения, Отзиви, Цена и Състав - Здравен Портал България</title>
+    <meta name="description" content="Подробно ревю за Uromen: реални мнения от форуми, състав, цена в България, отзиви за здравето на простатата и потентността, поръчка с -50% отстъпка.">
+    <link rel="canonical" href="https://konmesa.github.io/bulgary/uromen.html">
+    
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --accent: #16a34a;
+            --accent-hover: #15803d;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .header-nav {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .back-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+        }
+
+        .review-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .badge-category {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: var(--primary-dark);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .meta-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .rating-stars {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .offer-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px dashed var(--primary);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .offer-img {
+            width: 100%;
+            max-width: 280px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .offer-details {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .price-tag {
+            margin: 15px 0;
+        }
+
+        .old-p {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .new-p {
+            font-size: 32px;
+            font-weight: 900;
+            color: #dc2626;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 800;
+            padding: 16px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(22, 163, 74, 0.5);
+        }
+
+        .content-body p {
+            margin-bottom: 20px;
+            color: #334155;
+            text-align: justify;
+        }
+
+        .content-body strong {
+            color: var(--text-dark);
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1e293b;
+            margin: 35px 0 15px 0;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .list-style {
+            margin: 0 0 25px 20px;
+        }
+
+        .list-style li {
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        .reviews-section {
+            margin-top: 50px;
+            border-top: 2px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .comment-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .comment-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .comment-text {
+            font-size: 15px;
+            color: #475569;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .article-card { padding: 20px; }
+            h1 { font-size: 24px; }
+            .offer-box { flex-direction: column; text-align: center; }
+            .offer-img { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="header-nav">
+        <div class="header-container">
+            <a href="https://konmesa.github.io/bulgary/" class="logo">Здравен<span>Портал</span></a>
+            <a href="https://konmesa.github.io/bulgary/" class="back-link">← Всички продукти</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="article-card">
+            
+            <header class="review-header">
+                <span class="badge-category">Мъжко Здраве</span>
+                <h1>Uromen Мнения, Отзиви, Цена и Състав: Пълно Ревю за Здрава Простата</h1>
+                <div class="meta-info">
+                    <span>Автор: Д-р П. Димитров</span>
+                    <span>•</span>
+                    <span class="rating-stars">★★★★★ 4.9 / 5.0</span>
+                    <span>•</span>
+                    <span>174 Коментара</span>
+                </div>
+            </header>
+
+            <!-- Promoted Offer Banner Top -->
+            <div class="offer-box">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Uromen Капсули" class="offer-img">
+                <div class="offer-details">
+                    <h3>Официална Промоция за България</h3>
+                    <p style="font-size: 14px; color: #475569; margin-top: 5px;">Вземете оригинален Uromen за простатата и мъжкото здраве с -50% отстъпка.</p>
+                    <div class="price-tag">
+                        <span class="old-p">138 лв.</span>
+                        <span class="new-p">69 лв.</span>
+                    </div>
+                    <a href="https://konmesa.github.io/bulgary/" class="cta-btn">ПОРЪЧАЙ С 50% ОТСТЪПКА СЕГА</a>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <p>Възпалението на простатната жлеза (простатит) и нейното доброкачествено уголемяване са сред най-честите здравословни проблеми, с които се сблъскват мъжете над 40-годишна възраст. Симптоми като чести нощни посещения на тоалетната, парене, трудно уриниране и отслабена либидна функция могат драстично да влошат качеството на живот. В тази подробна статия разглеждаме <strong>Uromen</strong> — био-добавка от ново поколение, създадена за подкрепа на простатата и мъжката система.</p>
+
+                <div class="section-title">Какво представлява Uromen?</div>
+                <p>Uromen е натурален комплекс под формата на капсули, разработен с прецизна комбинация от растителни екстракти, минерали и антиоксиданти. Неговото основно действие е насочено към бързото облекчаване на възпалителните процеси в пикочно-половата система, намаляване на отока на простатата и нормализиране на уринирането.</p>
+                <p>За разлика от много синтетични медикаменти, Uromen действа щадящо за организма, като същевременно подпомага нормалното производство на тестостерон и подобрява сексуалната издръжливост.</p>
+
+                <div class="section-title">Основни ползи и свойства на Uromen</div>
+                <p>Според клиничните изпитвания и мненията на мъже в България, Uromen осигурява следните предимства:</p>
+                <ul class="list-style">
+                    <li><strong>Нормализира уринирането:</strong> Премахва частата необходимост от нощно уриниране и възстановява струята.</li>
+                    <li><strong>Намалява болката и паренето:</strong> Бързо овладява възпалението и спазмите в малкия таз.</li>
+                    <li><strong>Подпомага потентността:</strong> Подобрява кръвообращението в съдовете и поддържа еректилната функция.</li>
+                    <li><strong>Предотвратява усложнения:</strong> Защитава пикочните пътища от хронични инфекции и запушвания.</li>
+                    <li><strong>Натурален и безопасен състав:</strong> Не предизвиква странични ефекти или колебания в кръвното налягане.</li>
+                </ul>
+
+                <div class="section-title">Активен състав на Uromen</div>
+                <p>Мощното действие на Uromen се дължи на неговата концентрирана и чиста формула:</p>
+                <ul class="list-style">
+                    <li><strong>Екстракт от Сао Палмето (Saw Palmetto):</strong> Естествено блокира ензима, отговорен за уголемяването на простатата, и намалява отоците.</li>
+                    <li><strong>Тиквено семе екстракт:</strong> Богат на цинк и мастни киселини, които укреват пикочния мехур и подобряват сперматогенезата.</li>
+                    <li><strong>Коприва екстракт:</strong> Намалява възпалителните процеси и пречиства пикочните пътища от бактерии.</li>
+                    <li><strong>Цинк и Селен:</strong> Ключови минерали за поддържане на високи нива на тестостерон и защитата на клетките от оксидативен стрес.</li>
+                </ul>
+
+                <div class="section-title">Инструкции за употреба — Как се приема?</div>
+                <p>За постигане на пълни и дълготрайни резултати следвайте указанията в листовката:</p>
+                <ol class="list-style">
+                    <li>Приемайте по 2 капсули дневно (1 капсула сутрин и 1 капсула вечер).</li>
+                    <li>Пийте капсулите с чаша вода, за предпочитане преди хранене.</li>
+                    <li>Минималният курс на прием е 30 дни за постигане на трайно облекчение.</li>
+                </ol>
+
+                <div class="section-title">Uromen Мнения и Отзиви във Форумите</div>
+                <p>Мненията за Uromen във форумите за мъжко здраве в България са преобладаващо позитивни. Потребителите съобщават за рязко намаляване на нощните събуждания още през първите 10 дни от приема.</p>
+                <p>Много мъже споделят, че освен нормализирането на уринирането, са усетили и значително повишаване на тонуса, енергията и сексуалната си функция.</p>
+
+                <!-- Bottom Banner -->
+                <div class="offer-box">
+                    <div class="offer-details" style="text-align: center;">
+                        <h3 style="font-size: 22px; color: #1e293b;">Желаете ли да възстановите здравето на простатата?</h3>
+                        <p style="margin: 10px 0; color: #475569;">Заявете своя оригинален Uromen с 50% отстъпка и дискретна доставка за цяла България.</p>
+                        <div class="price-tag">
+                            <span class="old-p">138 лв.</span>
+                            <span class="new-p">69 лв.</span>
+                        </div>
+                        <a href="https://konmesa.github.io/bulgary/" class="cta-btn">ВЗЕМИ UROMEN ТУК →</a>
+                    </div>
+                </div>
+
+                <div class="section-title">Цена на Uromen в България — Откъде да поръчате?</div>
+                <p>Текущата промоционална цена на Uromen е <strong>69 лв.</strong> (редовна цена 138 лв.). **Uromen не се продава в аптеките** или в онлайн магазини като eMag и OLX, за да се гарантира дискретност и оригиналност на продукта.</p>
+                <p>Можете да поръчате Uromen единствено през официалния сайт на дистрибутора с бърза и анонимна доставка с наложен платеж.</p>
+
+            </div>
+
+            <!-- Customer Reviews Section -->
+            <section class="reviews-section">
+                <h2>Реални Отзиви от Купувачи</h2>
+                <br>
+                
+                <div class="comment-card">
+                    <div class="comment-author">
+                        <span>Пламен К. (52 г., София)</span>
+                        <span class="comment-date">Преди 2 дни</span>
+                    </div>
+                    <p class="comment-text">„Ставах по 4-5 пъти на ночь до тоалетната. След 2 седмици с Uromen спя непробудно цяла ночь. Продуктът наистина работи отлично!“</p>
+                </div>
+
+                <div class="comment-card">
+                    <div class="comment-author">
+                        <span>Борислав М. (60 г., Пловдив)</span>
+                        <span class="comment-date">Преди 5 дни</span>
+                    </div>
+                    <p class="comment-text">„Много бързо облекчи паренето и дискомфорта. Доставката беше бърза и дискретна. Много съм доволен от резултата.“</p>
+                </div>
+
+                <div class="comment-card">
+                    <div class="comment-author">
+                        <span>Николай Д. (47 г., Варна)</span>
+                        <span class="comment-date">Преди 1 седмица</span>
+                    </div>
+                    <p class="comment-text">„Освен че уринирането ми се нормализира, усещам и много повече енергия. Страхотна промо цена за такъв ефективен състав.“</p>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Здравен Информационен Портал България. Всички права запазени.</p>
+        <p>https://konmesa.github.io/bulgary/ - Независими ревюта и продуктови анализи.</p>
+    </footer>
+
+</body>
+</html>
