@@ -1,10 +1,467 @@
 <!DOCTYPE html>
-<html>
+<html lang="bg">
 <head>
-    <title>Test Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Здравен Портал България | Препоръчани Продукти & Промоции</title>
+    <meta name="description" content="Официален каталог с отзиви, реални мнения и промоционални цени на водещи здравословни продукти в България.">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Здравен Портал България - Текстови Отзиви & Промо Цени">
+    <meta property="og:description" content="Открийте най-добрите натурални продукти за здраве, стави, сърце и тонус на промоционални цени.">
+    <meta property="og:type" content="website">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #16a34a;
+            --bg-body: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Header Navigation Banner */
+        .top-bar {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .top-bar span {
+            color: #f59e0b;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            font-size: 13px;
+        }
+
+        .trust-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: -30px auto 50px auto;
+            padding: 0 15px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Product Cards Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 20px;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .img-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background-color: #f8fafc;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .img-container img {
+            transform: scale(1.06);
+        }
+
+        .discount-tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #dc2626;
+            color: white;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .card-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .rating-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 16px;
+        }
+
+        .score {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .reviews {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .product-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .features li {
+            font-size: 13px;
+            color: #334155;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+        }
+
+        .price-container {
+            border-top: 1px solid #f1f5f9;
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .prices {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        .new-price {
+            font-size: 26px;
+            font-weight: 900;
+            color: #dc2626;
+        }
+
+        .btn-buy {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 14px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-buy:hover {
+            background: linear-gradient(135deg, #15803d, #166534);
+            box-shadow: 0 6px 16px rgba(22, 163, 74, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Site-ul funcționează!</h1>
-    <p>Aceasta este pagina principală.</p>
+
+    <div class="top-bar">
+        ⚡ СПЕЦИАЛНА ОФЕРТА: <span>-50% ОТСТЪПКА</span> ЗА ВСИЧКИ ПРОДУКТИ ДНЕС!
+    </div>
+
+    <header class="hero">
+        <h1>Официален Здравен Портал България</h1>
+        <p>Независими ревюта, тествани съставки и директни промоционални оферти с гарантирано качество.</p>
+        
+        <div class="trust-badges">
+            <div class="trust-item">✔ 100% Натурални съставки</div>
+            <div class="trust-item">✔ Бърза доставка за БГ</div>
+            <div class="trust-item">✔ Плащане при преглед (Наложен платеж)</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="products-grid">
+            
+        <div class="product-card">
+            <div class="badge" style="background-color: #e11d48;">БЕСТСЕЛЪР</div>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="DiaFlex Forte" loading="lazy">
+                <span class="discount-tag">-50% PROMO</span>
+            </div>
+            <div class="card-content">
+                <div class="rating-box">
+                    <span class="stars">★★★★★</span>
+                    <span class="score">4.9</span>
+                    <span class="reviews">(142 отзива)</span>
+                </div>
+                <h2 class="product-name">DiaFlex Forte</h2>
+                <p class="tagline">Иновативна Формула за Здрави Стави и Хрущяли</p>
+                <ul class="features">
+                    <li>✓ Облекчава болката и сковаността</li><li>✓ Възстановява хрущялната тъкан</li><li>✓ 100% натурални растителни съставки</li>
+                </ul>
+                <div class="price-container">
+                    <div class="prices">
+                        <span class="old-price">138 лв.</span>
+                        <span class="new-price">69 лв.</span>
+                    </div>
+                    <a href="diaflex-forte.html" class="btn-buy">ПРЕГЛЕД КЪМ ОФЕРТАТА →</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="product-card">
+            <div class="badge" style="background-color: #d97706;">ХИТ ПРОДУКТ</div>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="SnapOnSmile" loading="lazy">
+                <span class="discount-tag">-50% PROMO</span>
+            </div>
+            <div class="card-content">
+                <div class="rating-box">
+                    <span class="stars">★★★★★</span>
+                    <span class="score">4.8</span>
+                    <span class="reviews">(189 отзива)</span>
+                </div>
+                <h2 class="product-name">SnapOnSmile</h2>
+                <p class="tagline">Перфектна Холивудска Усмивка за Секунди</p>
+                <ul class="features">
+                    <li>✓ Моментален визуален ефект</li><li>✓ Универсален размер за всеки</li><li>✓ Без нужда от пилене на зъби</li>
+                </ul>
+                <div class="price-container">
+                    <div class="prices">
+                        <span class="old-price">118 лв.</span>
+                        <span class="new-price">59 лв.</span>
+                    </div>
+                    <a href="snap-on-smile.html" class="btn-buy">ПРЕГЛЕД КЪМ ОФЕРТАТА →</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="product-card">
+            <div class="badge" style="background-color: #2563eb;">ПРЕПОРЪЧАНО</div>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80" alt="Cardioser" loading="lazy">
+                <span class="discount-tag">-50% PROMO</span>
+            </div>
+            <div class="card-content">
+                <div class="rating-box">
+                    <span class="stars">★★★★★</span>
+                    <span class="score">4.9</span>
+                    <span class="reviews">(165 отзива)</span>
+                </div>
+                <h2 class="product-name">Cardioser</h2>
+                <p class="tagline">Натурална Подкрепа за Сърцето и Кръвното</p>
+                <ul class="features">
+                    <li>✓ Нормализира артериалното налягане</li><li>✓ Укрепва съдовите стени</li><li>✓ Намалява стреса и холестерола</li>
+                </ul>
+                <div class="price-container">
+                    <div class="prices">
+                        <span class="old-price">140 лв.</span>
+                        <span class="new-price">69 лв.</span>
+                    </div>
+                    <a href="cardioser.html" class="btn-buy">ПРЕГЛЕД КЪМ ОФЕРТАТА →</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="product-card">
+            <div class="badge" style="background-color: #9333ea;">ТОП ИЗБОР</div>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Brea UP" loading="lazy">
+                <span class="discount-tag">-50% PROMO</span>
+            </div>
+            <div class="card-content">
+                <div class="rating-box">
+                    <span class="stars">★★★★★</span>
+                    <span class="score">4.7</span>
+                    <span class="reviews">(118 отзива)</span>
+                </div>
+                <h2 class="product-name">Brea UP</h2>
+                <p class="tagline">Луксозен Крем за Стягане и Оформяне на Бюста</p>
+                <ul class="features">
+                    <li>✓ Подобрява еластичността на кожата</li><li>✓ Естествен лифтинг ефект</li><li>✓ Хидратира и подхранва в дълбочина</li>
+                </ul>
+                <div class="price-container">
+                    <div class="prices">
+                        <span class="old-price">130 лв.</span>
+                        <span class="new-price">65 лв.</span>
+                    </div>
+                    <a href="brea-up.html" class="btn-buy">ПРЕГЛЕД КЪМ ОФЕРТАТА →</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="product-card">
+            <div class="badge" style="background-color: #059669;">ЕКСКЛУЗИВНО</div>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="UROMEN" loading="lazy">
+                <span class="discount-tag">-50% PROMO</span>
+            </div>
+            <div class="card-content">
+                <div class="rating-box">
+                    <span class="stars">★★★★★</span>
+                    <span class="score">4.9</span>
+                    <span class="reviews">(204 отзива)</span>
+                </div>
+                <h2 class="product-name">UROMEN</h2>
+                <p class="tagline">Мощна Грижа за Простатата и Мъжката Сила</p>
+                <ul class="features">
+                    <li>✓ Премахва възпалението и частатото уриниране</li><li>✓ Възстановява потенциала и тонуса</li><li>✓ 100% био съставки без странични ефекти</li>
+                </ul>
+                <div class="price-container">
+                    <div class="prices">
+                        <span class="old-price">138 лв.</span>
+                        <span class="new-price">69 лв.</span>
+                    </div>
+                    <a href="uromen.html" class="btn-buy">ПРЕГЛЕД КЪМ ОФЕРТАТА →</a>
+                </div>
+            </div>
+        </div>
+    
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Здравен Информационен Портал България. Всички права запазени.</p>
+        <p>Информацията на този сайт е с информационна цел и не замества консултацията с медицински специалист.</p>
+    </footer>
+
 </body>
 </html>
